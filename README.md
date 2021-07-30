@@ -1,7 +1,7 @@
-# Usuful bash scripts
-Bash scripts that can be useful sometimes
+# 📂 Useful bash scripts
+Gathering used bash scripts and documented them
 
-## Kind of scripts
+## Scripts
 - Docker
 	- [List containers restart policy](https://github.com/ehlui/usefull_bashitos_pavida/blob/master/docker/check_restart_policy_containers.sh)
 	- [Build custom images](https://github.com/ehlui/usefull_bashitos_pavida/blob/master/docker/build_image.sh)
