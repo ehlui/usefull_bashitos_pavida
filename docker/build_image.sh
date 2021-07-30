@@ -1,6 +1,9 @@
 #!/bin/bash
 # PURPOUSE:
 # Build a docker image from custom settings
+# Only need to be changed some variables content:
+# - image_name 
+# - dockerfile_path (if you really need it)
 # -----eHLui-----
 
 CYAN='\033[0;36m'
