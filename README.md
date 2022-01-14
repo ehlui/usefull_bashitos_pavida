@@ -12,3 +12,8 @@ Gathering used bash scripts and documented them
 
 - OS
 	- [Current OS](https://github.com/ehlui/usefull_bashitos_pavida/tree/master/os) 
+
+
+- GIT
+	- CACHE
+		- [Clean cache from .gitignore in batch](git/clean-cache.sh)
