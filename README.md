@@ -15,4 +15,5 @@ Gathering used bash scripts and documented them
 
 
 - GIT
-	[Clean cache from .gitignore](git/clean-cache.sh)
+	- CACHE
+		- [Clean cache from .gitignore in batch](git/clean-cache.sh)
