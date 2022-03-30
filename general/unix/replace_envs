@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Script to load values from a key-value file
+# into a file with varibles as keys from the first file.
+#
+# VARS
+#   sourcefile
+#        - Actual key-value file to read from
+#
+#   templatefile
+#        - Template file with variables within
+#
+#   outputfile
+#        - Template file with variables replaced from
+#          sourcefile.
+#
+# -ehLui
+
+sourcefile=
+templatefile=
+outputfile=
+
+# 1- Parse args
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -t=* | --templatefile=*)
+        templatefile="${1#*=}"
+        ;;
+        -s=* | --sourcefile=*)
+        sourcefile="${1#*=}"
+        ;;
+        -o=* | --outputfile=*)
+        outputfile="${1#*=}"
+        ;;
+        *)
+        printf "Error: unknown option: $1\n"
+        exit 1
+    esac
+    shift
+done
+
+# 2- If *.env variable file is empty it will read a default one from current dir
+if [[ -z "$sourcefile" ]] 
+then
+    #TODO: look up current dir to load  a env file as default
+    sourcefile="$(ls . | grep .env)"
+fi
+
+# 3- Last check
+if [[ -z "$templatefile" ]] || [[ -z "$sourcefile" ]] || [[ -z "$outputfile" ]]
+then 
+      echo "There's a variable empty"
+      exit 1;
+fi
+
+# 4- Perform the subtitution
+(. $sourcefile && eval "echo \"$(cat $templatefile)\"") > $outputfile
