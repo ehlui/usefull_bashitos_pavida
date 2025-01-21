@@ -1,0 +1,4 @@
+#!/bin/bash
+# Removing all branches except the current one
+# Warning - If we having main and others relevant, we better avoid it or just adding a list of "ignorables" for the grep part
+git branch -D $(git branch | grep -v '^\*' | awk '{print $1}' | tr '\n' ' ')
